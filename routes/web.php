@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/{all}', function () {
+/* Route::get('/{all}', function () {
     return view('welcome');
 })->where(['all'=>'.*']);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); */
+
+Route::pattern('url', '.*');
+ 
+Route::get('/', 'HomeController');
+
+Route::get('vue/{url?}', 'VueController');
